@@ -1,0 +1,4 @@
+
+    var WorldCtrl = function ($scope) {
+
+    };

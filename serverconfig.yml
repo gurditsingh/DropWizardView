@@ -1,0 +1,8 @@
+
+
+http:
+  rootPath: /api/* # Default is /*
+  
+assets:
+  overrides:
+    /: src/main/resources/assets/
