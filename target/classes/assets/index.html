@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="module" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Dropwizard example</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-controller="ctrl">
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <a class="navbar-brand">USER APPLICATION</a>
+        <div class="container">
+        <form class="navbar-form pull-right" role="search">
+            <div class="input-group">
+                <span class="input-group-addon">search</span>
+                <input type="text" class="form-control" placeholder="Username" onkeyup="search()" ng-model="Sname">
+            </div>
+        </form>
+        </div>
+        </div>
+    </div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-success">
+                <div class="panel-heading">User Register</div>
+                <div class="panel-body">
+                <form role="form" >
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="fname" placeholder="Enter Fname" ng-model="new.fname">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="lname" placeholder="Enter Lname" ng-model="new.lname">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="phone" placeholder="Enter Phone" ng-model="new.phone">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" placeholder="Enter Email" ng-model="new.email">
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" class="form-control" name="UID" placeholder="Enter Email" ng-model="new.UID">
+                    </div>
+
+                    <button type="button" class="btn btn-success" ng-click="call()">Save</button>
+                    <button type="button" class="btn btn-danger" ng-click="clear()">Clear</button>
+                </form>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-info">
+                <div><ul class="nav nav-pills nav-stacked">
+                    <li class="active">
+                        <a href="#">
+                            <span class="badge pull-right">{{users.length}}</span>
+                            User Data
+                        </a>
+                    </li>
+                </ul></div>
+                <div class="panel-body">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>FName</th>
+                        <th>LNmail</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                        <tr ng-repeat="user in users">
+                            <td>{{ user.fname }}</td>
+                            <td>{{ user.lname }}</td>
+                            <td>{{ user.phone }}</td>
+                            <td> {{user.email}}  </td>
+                            <td> <a href="javascript:void(0)" ng-click="delete(user.UID)">delete</a>
+                                | <a href="javascript:void(0)" ng-click="find(user.UID)">update</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+           </div>
+        </div>
+    </div>
+
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="lib/angular.js"></script>
+<script src="lib/angular-resource.js"></script>
+<script src="lib/angular-cookies.js"></script>
+<script src="js/controllers.js"></script>
+<script src="/js/bootstrap.js"></script>
+</html>

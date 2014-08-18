@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<input type="text" id="txtUserName" >
+<a href="#" id="mylink">Test</a>
+<span id="results"></span>
+<script>
+    $( document ).ready(function() {
+    $('#mylink').click(function(){
+$.ajax({
+            type:"GET",
+            beforeSend: function (request)
+            {
+                request.setRequestHeader("user_header", "Admin");
+            },
+            url: "http://localhost:8080/api/user",
+            success: function(msg) {
+               alert(msg[0].displayRole);
+            }
+       });
+      });
+
+});
+</script>
+</body>
+</html>

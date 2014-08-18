@@ -1,0 +1,34 @@
+.form-control{
+    background-color: #373737;
+    border: 0px solid;
+    height: 50px;
+    width: 100%;
+    color: #e4e8d9;
+}
+#btn{
+    background-color: #cf4d0b;
+}
+#divlogin{
+    background-color: #4D4D4D;
+    border: 0px;
+}
+#signup{
+    color: #797471;
+    text-decoration: none;
+    font-size:17px;
+
+}
+#footer{
+    background-color: #373737;
+    border: 0px solid;
+    height: 50px;
+    text-align: center;
+}
+#limag{
+    height: 50%;
+    width: 30%;
+}
+#panel  {
+    align-content: center;
+    background-color: #a8a3a0;
+}
